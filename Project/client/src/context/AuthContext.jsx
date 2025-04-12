@@ -1,64 +1,77 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { auth } from '../services/api';
+import { toast } from 'react-toastify';
 
 const AuthContext = createContext();
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [token, setToken] = useState(localStorage.getItem('authToken'));
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      // Verify token and get user data
-      auth.getProfile()
-        .then(response => {
+    const checkAuth = async () => {
+      try {
+        if (token) {
+          const response = await auth.getProfile();
           setUser(response.data);
           setIsAuthenticated(true);
-        })
-        .catch(() => {
-          localStorage.removeItem('authToken');
-          setIsAuthenticated(false);
-          setUser(null);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    } else {
-      setLoading(false);
-    }
-  }, []);
+        }
+      } catch (error) {
+        console.error('Auth check failed:', error);
+        localStorage.removeItem('authToken');
+        setToken(null);
+        setIsAuthenticated(false);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const login = async (email, password) => {
+    checkAuth();
+  }, [token]);
+
+  const login = async (credentials) => {
     try {
-      const response = await auth.login({ email, password });
+      const response = await auth.login(credentials);
       const { token, user } = response.data;
       localStorage.setItem('authToken', token);
+      setToken(token);
       setUser(user);
       setIsAuthenticated(true);
-      return { success: true };
+      toast.success('Login successful');
+      return true;
     } catch (error) {
-      return { 
-        success: false, 
-        error: error.response?.data?.message || 'Login failed' 
-      };
+      console.error('Login failed:', error);
+      toast.error(error.response?.data?.message || 'Login failed');
+      return false;
     }
   };
 
   const logout = () => {
     localStorage.removeItem('authToken');
-    setIsAuthenticated(false);
+    setToken(null);
     setUser(null);
+    setIsAuthenticated(false);
+    toast.success('Logged out successfully');
   };
 
   const value = {
     isAuthenticated,
     user,
     loading,
+    token,
     login,
-    logout,
-    authToken: localStorage.getItem('authToken')
+    logout
   };
 
   return (
@@ -68,10 +81,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-}; 
+export default AuthContext; 

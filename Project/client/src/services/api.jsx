@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json'
   }
@@ -36,15 +36,15 @@ api.interceptors.response.use(
 );
 
 // Auth endpoints
-const auth = {
-  login: (credentials) => api.post('/users/login', credentials),
-  register: (userData) => api.post('/users/register', userData),
-  logout: () => api.post('/users/logout'),
-  getProfile: () => api.get('/users/profile')
+export const auth = {
+  login: (credentials) => api.post('/auth/login', credentials),
+  register: (userData) => api.post('/auth/register', userData),
+  getProfile: () => api.get('/auth/profile'),
+  logout: () => api.post('/auth/logout')
 };
 
 // User endpoints
-const users = {
+export const users = {
   getAll: () => api.get('/users'),
   getById: (id) => api.get(`/users/${id}`),
   update: (id, data) => api.put(`/users/${id}`, data),
@@ -52,7 +52,7 @@ const users = {
 };
 
 // Child endpoints
-const children = {
+export const children = {
   getAll: () => api.get('/children'),
   getById: (id) => api.get(`/children/${id}`),
   create: (data) => api.post('/children', data),
@@ -61,7 +61,7 @@ const children = {
 };
 
 // Babysitter endpoints
-const babysitters = {
+export const babysitters = {
   getAll: () => api.get('/babysitters'),
   getById: (id) => api.get(`/babysitters/${id}`),
   create: (data) => api.post('/babysitters', data),
@@ -70,7 +70,7 @@ const babysitters = {
 };
 
 // Finance endpoints
-const finances = {
+export const finances = {
   getAll: () => api.get('/finances'),
   getById: (id) => api.get(`/finances/${id}`),
   create: (data) => api.post('/finances', data),
@@ -81,36 +81,38 @@ const finances = {
 };
 
 // Attendance endpoints
-const attendance = {
+export const attendance = {
   getAll: () => api.get('/attendance'),
   getById: (id) => api.get(`/attendance/${id}`),
   create: (data) => api.post('/attendance', data),
   update: (id, data) => api.put(`/attendance/${id}`, data),
   delete: (id) => api.delete(`/attendance/${id}`),
-  getReports: (params) => api.get('/attendance/reports', { params })
+  getRecent: () => api.get('/attendance/recent')
 };
 
 // Schedule endpoints
-const schedules = {
+export const schedules = {
   getAll: () => api.get('/schedules'),
   getById: (id) => api.get(`/schedules/${id}`),
   create: (data) => api.post('/schedules', data),
   update: (id, data) => api.put(`/schedules/${id}`, data),
-  delete: (id) => api.delete(`/schedules/${id}`)
+  delete: (id) => api.delete(`/schedules/${id}`),
+  getUpcoming: () => api.get('/schedules/upcoming')
 };
 
 // Notification endpoints
-const notifications = {
+export const notifications = {
   getAll: () => api.get('/notifications'),
   getById: (id) => api.get(`/notifications/${id}`),
   create: (data) => api.post('/notifications', data),
   update: (id, data) => api.put(`/notifications/${id}`, data),
-  delete: (id) => api.delete(`/notifications/${id}`)
+  delete: (id) => api.delete(`/notifications/${id}`),
+  markAsRead: (id) => api.put(`/notifications/${id}/read`)
 };
 
 // Dashboard endpoints
-const dashboard = {
+export const dashboard = {
   getStats: () => api.get('/dashboard/stats')
 };
 
-export { api, auth, users, children, babysitters, finances, attendance, schedules, notifications, dashboard }; 
+export default api; 
