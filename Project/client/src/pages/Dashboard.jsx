@@ -7,6 +7,7 @@ import Chart from 'react-apexcharts';
 import ReactApexChart from 'react-apexcharts';
 import { format } from 'date-fns';
 import './Dashboard.css';
+import { useAuth } from '../context/AuthContext';
 
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState({
@@ -31,10 +32,9 @@ const Dashboard = () => {
 
   const [stats, setStats] = useState({
     totalChildren: 0,
-    totalBabysitters: 0,
-    totalIncome: 0,
-    totalExpenses: 0,
-    pendingIncidents: 0
+    activeBabysitters: 0,
+    pendingRequests: 0,
+    totalEarnings: 0
   });
 
   const [recentAttendance, setRecentAttendance] = useState([]);
@@ -44,6 +44,8 @@ const Dashboard = () => {
     expenses: []
   });
 
+  const { authToken } = useAuth();
+
   // Fetch dashboard data
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -51,7 +53,11 @@ const Dashboard = () => {
         setLoading(true);
         
         // Fetch statistics
-        const statsResponse = await axios.get('/api/dashboard/stats');
+        const statsResponse = await axios.get('/api/dashboard/stats', {
+          headers: {
+            Authorization: `Bearer ${authToken}`
+          }
+        });
         setStats(statsResponse.data);
 
         // Fetch recent attendance
@@ -114,7 +120,7 @@ const Dashboard = () => {
     };
 
     fetchDashboardData();
-  }, []);
+  }, [authToken]);
 
   // Approve booking handler
   const handleApproveBooking = (id) => {
@@ -269,6 +275,10 @@ const Dashboard = () => {
   };
 
   const expenseChartSeries = Array.isArray(financialData.expenses) ? financialData.expenses.map(item => item.amount) : [];
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="dashboard">
@@ -498,7 +508,7 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-grow-1 ms-3">
                     <h6 className="mb-1">Monthly Income</h6>
-                    <h3 className="mb-0">UGX {stats.totalIncome ? stats.totalIncome.toLocaleString() : '0'}</h3>
+                    <h3 className="mb-0">UGX {stats.totalEarnings ? stats.totalEarnings.toLocaleString() : '0'}</h3>
                   </div>
                 </div>
               </Card.Body>
@@ -512,8 +522,8 @@ const Dashboard = () => {
                     <FaExclamationTriangle className="text-warning" size={24} />
                   </div>
                   <div className="flex-grow-1 ms-3">
-                    <h6 className="mb-1">Pending Incidents</h6>
-                    <h3 className="mb-0">{stats.pendingIncidents || 0}</h3>
+                    <h6 className="mb-1">Pending Requests</h6>
+                    <h3 className="mb-0">{stats.pendingRequests || 0}</h3>
                   </div>
                 </div>
               </Card.Body>
