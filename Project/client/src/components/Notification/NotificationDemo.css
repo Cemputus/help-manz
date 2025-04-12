@@ -1,0 +1,74 @@
+.notification-demo {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.demo-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.global-notification-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.local-alert-container {
+  margin-bottom: 1.5rem;
+}
+
+.local-alert-container .alert-box-container {
+  position: relative;
+  transform: none;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+}
+
+.local-alert-container .alert-position-top,
+.local-alert-container .alert-position-bottom,
+.local-alert-container .alert-position-top-left,
+.local-alert-container .alert-position-top-right,
+.local-alert-container .alert-position-bottom-left,
+.local-alert-container .alert-position-bottom-right {
+  position: relative;
+  transform: none;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+}
+
+.options-card {
+  border: 1px solid #eee;
+  box-shadow: none;
+}
+
+.options-card .card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  .global-notification-buttons {
+    flex-direction: column;
+  }
+  
+  .global-notification-buttons .btn {
+    width: 100%;
+  }
+} 

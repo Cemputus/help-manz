@@ -1,0 +1,226 @@
+.alert-box {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  border-left-width: 4px;
+  margin-bottom: 1rem;
+}
+
+.alert-icon {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.toast-container {
+  z-index: 1070;
+}
+
+/* Position classes for fixed alerts */
+.alert-fixed {
+  position: fixed;
+  min-width: 300px;
+  max-width: 500px;
+  z-index: 1060;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+/* Toast container positions */
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.top-center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.middle-left {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.middle-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.middle-right {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.bottom-center {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.fade-out {
+  animation-name: fadeOut;
+}
+
+/* Notification Bell Styles */
+.notification-bell {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  color: #555;
+  background: transparent;
+  border: none;
+}
+
+.notification-bell:hover {
+  color: #333;
+}
+
+.notification-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.65rem;
+  padding: 0.15rem 0.35rem;
+}
+
+/* Dropdown Styles */
+.notification-dropdown {
+  width: 320px;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: none;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.notification-footer {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-top: 1px solid #eee;
+  background-color: #f8f9fa;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* Notification Item Styles */
+.notification-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+  background-color: #f5f5f5;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item.unread {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.notification-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.notification-item-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.notification-item-message {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.notification-item-time {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* Empty State */
+.notification-empty {
+  padding: 1.5rem;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Custom dropdown toggle without caret */
+.no-caret::after {
+  display: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .notification-dropdown {
+    width: 280px;
+  }
+  
+  .alert-fixed {
+    max-width: 90%;
+    width: 90%;
+  }
+} 

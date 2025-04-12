@@ -1,0 +1,236 @@
+.schedule-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.schedule-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.schedule-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.schedule-form {
+  margin-bottom: 2rem;
+}
+
+.schedule-form-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.75rem;
+}
+
+.calendar-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.current-week {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.calendar-day {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-header {
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.day-name {
+  display: block;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.day-date {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.day-content {
+  padding: 0.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.schedule-entry {
+  background-color: #f0f7ff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  position: relative;
+  border-left: 3px solid var(--primary-color);
+}
+
+.entry-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.entry-icon {
+  font-size: 0.75rem;
+}
+
+.entry-children {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.delete-entry-btn {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  background: none;
+  border: none;
+  color: var(--danger-color);
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.schedule-entry:hover .delete-entry-btn {
+  opacity: 1;
+}
+
+.no-schedule {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.schedule-list {
+  margin-top: 2rem;
+}
+
+.list-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.schedule-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: #555;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.no-entries {
+  text-align: center;
+  padding: 1.5rem;
+  color: #777;
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .calendar-week {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-week {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .schedule-header,
+  .calendar-navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .schedule-actions {
+    width: 100%;
+  }
+  
+  .schedule-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-week {
+    grid-template-columns: 1fr;
+  }
+} 

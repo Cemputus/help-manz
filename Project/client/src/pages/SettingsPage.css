@@ -1,0 +1,135 @@
+.settings-page {
+  padding: 20px 0;
+}
+
+.settings-nav {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.settings-nav-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+.settings-nav-item:last-child {
+  border-bottom: none;
+}
+
+.settings-nav-item:hover {
+  background-color: #f8f9fa;
+}
+
+.settings-nav-item.active {
+  background-color: #e9ecef;
+  font-weight: 600;
+}
+
+.settings-content {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.profile-image-preview {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.profile-image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+/* Form styles */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Tab styles */
+.nav-tabs .nav-link {
+  color: #495057;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: transparent;
+  color: #0056b3;
+}
+
+.nav-tabs .nav-link.active {
+  color: #0056b3;
+  background-color: transparent;
+  border-bottom: 2px solid #0056b3;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-primary:hover {
+  background-color: #004494;
+  border-color: #004494;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Alert styles */
+.alert {
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .settings-nav {
+    margin-bottom: 20px;
+  }
+  
+  .settings-nav-item {
+    padding: 12px 15px;
+  }
+} 

@@ -1,0 +1,147 @@
+.babysitter-page {
+  padding: 20px 0;
+}
+
+/* Reusing page header styles from dashboard */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-title h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.header-title p {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+.page-icon {
+  margin-right: 10px;
+  color: #3f51b5;
+}
+
+/* Filter Card */
+.filter-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.status-filter {
+  min-width: 150px;
+}
+
+/* Table Card */
+.table-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.babysitter-table th {
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.babysitter-table td {
+  vertical-align: middle;
+  padding: 15px 10px;
+}
+
+/* Babysitter Circle */
+.babysitter-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3f51b5;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Summary Cards */
+.summary-card {
+  text-align: center;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.summary-card p {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+.active-card {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.active-card h3 {
+  color: #4CAF50;
+}
+
+.on-leave-card {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.on-leave-card h3 {
+  color: #FFC107;
+}
+
+.terminated-card {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.terminated-card h3 {
+  color: #F44336;
+}
+
+/* Button Styles */
+.btn-outline-secondary.active {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-actions {
+    margin-top: 15px;
+  }
+
+  .babysitter-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .summary-card {
+    margin-bottom: 15px;
+  }
+} 

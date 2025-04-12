@@ -1,0 +1,69 @@
+client/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── assets/
+│       └── images/
+│           └── logo.png
+│
+├── src/
+│   ├── components/
+│   │   ├── Navigation.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── FinancePage.jsx
+│   │   ├── SchedulePage.jsx
+│   │   ├── AttendancePage.jsx
+│   │   ├── ChildrenPage.jsx
+│   │   ├── BabysittersPage.jsx
+│   │   ├── ParentsPage.jsx
+│   │   ├── SettingsPage.jsx
+│   │   ├── LoginPage.jsx
+│   │   ├── RegisterPage.jsx
+│   │   ├── ForgotPasswordPage.jsx
+│   │   └── ResetPasswordPage.jsx
+│   │
+│   ├── pages/
+│   │   ├── DashboardPage.jsx
+│   │   ├── FinancePage.jsx
+│   │   ├── SchedulePage.jsx
+│   │   ├── AttendancePage.jsx
+│   │   ├── ChildrenPage.jsx
+│   │   ├── BabysittersPage.jsx
+│   │   ├── ParentsPage.jsx
+│   │   ├── SettingsPage.jsx
+│   │   ├── LoginPage.jsx
+│   │   ├── RegisterPage.jsx
+│   │   ├── ForgotPasswordPage.jsx
+│   │   └── ResetPasswordPage.jsx
+│   │
+│   ├── styles/
+│   │   ├── DashboardPage.css
+│   │   ├── FinancePage.css
+│   │   ├── SchedulePage.css
+│   │   ├── AttendancePage.css
+│   │   ├── ChildrenPage.css
+│   │   ├── BabysittersPage.css
+│   │   ├── ParentsPage.css
+│   │   ├── SettingsPage.css
+│   │   ├── LoginPage.css
+│   │   ├── RegisterPage.css
+│   │   ├── ForgotPasswordPage.css
+│   │   └── ResetPasswordPage.css
+│   │
+│   ├── context/
+│   │   └── AuthContext.jsx
+│   │
+│   ├── utils/
+│   │   ├── api.js
+│   │   └── helpers.js
+│   │
+│   ├── App.jsx
+│   ├── index.js
+│   └── main.jsx
+│
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── .gitignore
+├── README.md
+└── .env 

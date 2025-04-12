@@ -1,0 +1,377 @@
+.attendance-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.attendance-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title-icon {
+  color: var(--primary-color);
+}
+
+.date-search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  z-index: 1;
+}
+
+.date-input {
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.searched-attendance {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-result-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.searched-record {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.record-status .status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-present {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.status-absent {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.record-times {
+  display: flex;
+  gap: 2rem;
+}
+
+.time-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-label, .notes-label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.time-value, .notes-value {
+  color: #555;
+}
+
+.calendar-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.current-week {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.attendance-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.calendar-day {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-day.today {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.day-header {
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.today .day-header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.day-name {
+  display: block;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.today .day-name {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.day-date {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.today .day-date {
+  color: white;
+}
+
+.day-content {
+  padding: 0.75rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.attendance-status {
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.attendance-present {
+  background-color: rgba(40, 167, 69, 0.05);
+}
+
+.attendance-absent {
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.status-text {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.attendance-present .status-text {
+  color: #28a745;
+}
+
+.attendance-absent .status-text {
+  color: #dc3545;
+}
+
+.time-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.time-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.time-icon {
+  color: var(--primary-color);
+  font-size: 0.75rem;
+}
+
+.attendance-notes {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #777;
+  border-top: 1px dashed #eee;
+  padding-top: 0.5rem;
+}
+
+.notes-icon {
+  margin-right: 0.25rem;
+}
+
+.no-attendance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.attendance-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.attendance-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.present-btn {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.present-btn:hover {
+  background-color: rgba(40, 167, 69, 0.2);
+}
+
+.absent-btn {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.absent-btn:hover {
+  background-color: rgba(220, 53, 69, 0.2);
+}
+
+.future-date {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.attendance-summary {
+  margin-top: 2rem;
+}
+
+.summary-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.summary-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-card {
+  flex: 1;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.stat-label {
+  margin-top: 0.5rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .attendance-calendar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .attendance-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .date-search {
+    width: 100%;
+  }
+  
+  .date-input {
+    width: 100%;
+  }
+  
+  .attendance-calendar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .record-times {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .summary-stats {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .attendance-calendar {
+    grid-template-columns: 1fr;
+  }
+} 

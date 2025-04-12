@@ -1,0 +1,458 @@
+.budget-dashboard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title-icon {
+  color: var(--primary-color);
+}
+
+.timeframe-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dashboard-tabs .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.dashboard-tabs .nav-link.active {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.dashboard-tabs .nav-link svg {
+  margin-bottom: 2px;
+}
+
+.tab-content-container {
+  padding: 1rem 0;
+}
+
+/* KPI Cards */
+.kpi-cards {
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.2s;
+}
+
+.kpi-card:hover {
+  transform: translateY(-5px);
+}
+
+.income-card {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.expense-card {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.profit-card {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.compliance-card {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.kpi-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+}
+
+.income-card .kpi-icon {
+  color: #28a745;
+}
+
+.expense-card .kpi-icon {
+  color: #dc3545;
+}
+
+.profit-card .kpi-icon {
+  color: #007bff;
+}
+
+.compliance-card .kpi-icon {
+  color: #ffc107;
+}
+
+.kpi-title {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.income-card .kpi-value {
+  color: #28a745;
+}
+
+.expense-card .kpi-value {
+  color: #dc3545;
+}
+
+.profit-card .kpi-value {
+  color: #007bff;
+}
+
+.compliance-card .kpi-value {
+  color: #212529;
+}
+
+.kpi-trend {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.kpi-trend.positive {
+  color: #28a745;
+}
+
+.kpi-trend.negative {
+  color: #dc3545;
+}
+
+.budget-progress {
+  height: 6px;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.budget-progress .progress-bar {
+  background-color: #ffc107;
+}
+
+/* Section styling */
+.section-title {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 1.25rem;
+}
+
+/* Chart placeholder */
+.chart-placeholder {
+  padding: 1rem;
+  min-height: 300px;
+}
+
+.month-selector {
+  width: auto;
+  max-width: 120px;
+}
+
+.month-stat-cards {
+  margin-bottom: 1.5rem;
+}
+
+.month-stat {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.income-stat {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.expense-stat {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.profit-stat {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.income-stat .stat-value {
+  color: #28a745;
+}
+
+.expense-stat .stat-value {
+  color: #dc3545;
+}
+
+.profit-stat .stat-value {
+  color: #007bff;
+}
+
+/* Chart bars */
+.trend-bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 220px;
+  margin-bottom: 1.5rem;
+}
+
+.trend-month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 13%;
+}
+
+.month-label {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.bars-container {
+  display: flex;
+  gap: 2px;
+  height: 100%;
+  align-items: flex-end;
+}
+
+.income-bar, .expense-bar, .profit-bar {
+  width: 10px;
+  border-radius: 2px 2px 0 0;
+  transition: height 0.3s, opacity 0.3s;
+}
+
+.income-bar {
+  background-color: #28a745;
+}
+
+.expense-bar {
+  background-color: #dc3545;
+}
+
+.profit-bar {
+  background-color: #007bff;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+.income-color {
+  background-color: #28a745;
+}
+
+.expense-color {
+  background-color: #dc3545;
+}
+
+.profit-color {
+  background-color: #007bff;
+}
+
+.legend-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* Tables */
+.income-sources-table th, .budget-table th {
+  background-color: #f8f9fa;
+  color: var(--text-color);
+  font-weight: 600;
+  border-bottom-width: 1px;
+}
+
+.total-row {
+  font-weight: 700;
+  background-color: #f8f9fa;
+}
+
+.amount-cell {
+  font-weight: 600;
+}
+
+.percentage-bar-container {
+  width: 100%;
+  height: 12px;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.percentage-bar {
+  height: 100%;
+  background-color: #28a745;
+  border-radius: 6px;
+}
+
+.percentage-label {
+  position: absolute;
+  top: -3px;
+  right: 5px;
+  font-size: 0.75rem;
+  color: #212529;
+}
+
+/* Budget summary */
+.budget-totals {
+  margin-bottom: 1.5rem;
+}
+
+.budget-total {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.total-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.total-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+.total-value.spent {
+  color: #dc3545;
+}
+
+.total-value.remaining {
+  color: #28a745;
+}
+
+.category-item {
+  margin-bottom: 1rem;
+}
+
+.category-header {
+  margin-bottom: 0.5rem;
+}
+
+.category-name {
+  font-weight: 500;
+}
+
+.category-values {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.utilization-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.placeholder-text {
+  color: #6c757d;
+  font-style: italic;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .timeframe-selector {
+    width: 100%;
+  }
+  
+  .timeframe-selector .btn {
+    flex: 1;
+  }
+  
+  .kpi-cards .col-md-3 {
+    margin-bottom: 1rem;
+  }
+  
+  .trend-bars {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+  }
+  
+  .trend-month {
+    min-width: 60px;
+  }
+  
+  .chart-legend {
+    flex-direction: column;
+    align-items: center;
+  }
+} 

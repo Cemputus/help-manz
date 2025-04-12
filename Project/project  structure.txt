@@ -1,0 +1,132 @@
+server/
+├── config/
+│   ├── db.config.js         # Database configuration
+│   ├── auth.config.js       # JWT and authentication config
+│   └── config.js            # General app configuration
+│
+├── controllers/
+│   ├── auth.controller.js   # Authentication logic
+│   ├── user.controller.js   # User management
+│   ├── babysitter.controller.js
+│   ├── child.controller.js
+│   ├── finance.controller.js
+│   ├── attendance.controller.js
+│   ├── schedule.controller.js
+│   ├── notification.controller.js
+│   └── report.controller.js
+│
+├── middleware/
+│   ├── auth.middleware.js   # JWT verification
+│   ├── role.middleware.js   # Role-based access control
+│   ├── error.middleware.js  # Error handling
+│   └── validation.middleware.js # Request validation
+│
+├── models/
+│   ├── user.model.js
+│   ├── babysitter.model.js
+│   ├── child.model.js
+│   ├── finance.model.js
+│   ├── attendance.model.js
+│   ├── schedule.model.js
+│   └── notification.model.js
+│
+├── routes/
+│   ├── auth.routes.js
+│   ├── user.routes.js
+│   ├── babysitter.routes.js
+│   ├── child.routes.js
+│   ├── finance.routes.js
+│   ├── attendance.routes.js
+│   ├── schedule.routes.js
+│   ├── notification.routes.js
+│   └── report.routes.js
+│
+├── services/
+│   ├── email.service.js     # Email notifications
+│   ├── payment.service.js   # Payment processing
+│   └── report.service.js    # Report generation
+│
+├── utils/
+│   ├── logger.js
+│   ├── validators.js
+│   └── helpers.js
+│
+├── .env                    # Environment variables
+├── .gitignore
+├── package.json
+└── server.js              # Main application file
+
+
+
+1.Authentication Routes (/api/auth)
+POST /register              # Register new user
+POST /login                 # User login
+POST /logout               # User logout
+POST /refresh-token        # Refresh JWT token
+POST /forgot-password      # Password recovery
+POST /reset-password       # Reset password
+
+2.User Routes (/api/users):
+GET /profile              # Get user profile
+PUT /profile             # Update user profile
+GET /users              # Get all users (admin only)
+GET /users/:id          # Get specific user
+PUT /users/:id          # Update user
+DELETE /users/:id       # Delete user
+
+3.Babysitter Routes (/api/babysitters):
+GET /                    # Get all babysitters
+POST /                   # Create new babysitter
+GET /:id                # Get specific babysitter
+PUT /:id                # Update babysitter
+DELETE /:id             # Delete babysitter
+GET /:id/schedule       # Get babysitter schedule
+GET /:id/payments       # Get babysitter payments
+GET /:id/attendance     # Get babysitter attendance
+
+5.Child Routes (/api/children):
+GET /                    # Get all children
+POST /                   # Add new child
+GET /:id                # Get specific child
+PUT /:id                # Update child info
+DELETE /:id             # Delete child
+GET /:id/attendance     # Get child attendance
+GET /:id/schedule       # Get child schedule
+
+5.Finance Routes (/api/finance):
+GET /                    # Get all financial records
+POST /                   # Add new financial record
+GET /:id                # Get specific record
+PUT /:id                # Update record
+DELETE /:id             # Delete record
+GET /summary            # Get financial summary
+GET /reports            # Generate financial reports
+
+6.Attendance Routes (/api/attendance)
+GET /                    # Get all attendance records
+POST /                   # Mark attendance
+GET /:id                # Get specific record
+PUT /:id                # Update attendance
+GET /reports            # Generate attendance reports
+
+7.Schedule Routes (/api/schedules)
+GET /                    # Get all schedules
+POST /                   # Create new schedule
+GET /:id                # Get specific schedule
+PUT /:id                # Update schedule
+DELETE /:id             # Delete schedule
+GET /conflicts          # Check schedule conflicts
+
+8.Notification Routes (/api/notifications):
+GET /                    # Get all notifications
+POST /                   # Create notification
+GET /:id                # Get specific notification
+PUT /:id                # Update notification
+DELETE /:id             # Delete notification
+PUT /:id/read           # Mark as read
+
+9.Report Routes (/api/reports)
+GET /attendance         # Generate attendance reports
+GET /finance           # Generate financial reports
+GET /performance       # Generate performance reports
+GET /summary           # Generate summary reports

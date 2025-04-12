@@ -1,0 +1,59 @@
+.schedule-page {
+  padding: 2rem 0;
+}
+
+.page-title {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.schedule-card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 8px;
+}
+
+.schedule-card .table {
+  margin-bottom: 0;
+}
+
+.schedule-card th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  color: #495057;
+  font-weight: 600;
+}
+
+.schedule-card td {
+  vertical-align: middle;
+}
+
+.badge {
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+}
+
+.btn-outline-primary,
+.btn-outline-danger {
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-danger:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .schedule-page {
+    padding: 1rem 0;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .schedule-card {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+} 

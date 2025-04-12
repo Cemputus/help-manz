@@ -1,0 +1,162 @@
+.payment-summary {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.payment-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.payment-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.payment-filter label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.date-range-select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 0.9rem;
+}
+
+.payment-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-stat-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-left: 4px solid var(--primary-color);
+}
+
+.payment-stat-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.payment-pending-icon {
+  color: var(--warning-color);
+}
+
+.payment-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-stat-label {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.payment-stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.payment-pending-value {
+  color: var(--warning-color);
+}
+
+.payment-table-container {
+  overflow-x: auto;
+}
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payment-table th,
+.payment-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.payment-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: #555;
+}
+
+.payment-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.payment-status-paid {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.payment-status-pending {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.no-payments {
+  text-align: center;
+  padding: 1.5rem;
+  color: #777;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .payment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .payment-table th,
+  .payment-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+} 
